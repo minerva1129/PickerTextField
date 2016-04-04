@@ -1,7 +1,7 @@
 import UIKit
 
 class PickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDataSource {
-    var dataList: [String] = []
+    var dataList = [String]()
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -19,8 +19,8 @@ class PickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDataSource
         picker.showsSelectionIndicator = true
         
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("onTapDone"))
-        let cancelItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("onTapCancel"))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("done"))
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancel"))
         toolbar.setItems([cancelItem, doneItem], animated: true)
         
         self.inputView = picker
@@ -43,12 +43,12 @@ class PickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDataSource
         self.text = dataList[row]
     }
     
-    func onTapCancel() {
+    func cancel() {
         self.text = ""
         self.endEditing(true)
     }
     
-    func onTapDone() {
+    func done() {
         self.endEditing(true)
     }
 }
