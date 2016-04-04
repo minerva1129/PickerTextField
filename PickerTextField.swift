@@ -14,14 +14,14 @@ class PickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDataSource
         self.dataList = dataList
         
         let picker = UIPickerView()
-        picker?.delegate = self
-        picker?.dataSource = self
-        picker?.showsSelectionIndicator = true
+        picker.delegate = self
+        picker.dataSource = self
+        picker.showsSelectionIndicator = true
         
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
         let doneItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("onTapDone"))
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("onTapCancel"))
-        toolbar?.setItems([cancelItem, doneItem], animated: true)
+        toolbar.setItems([cancelItem, doneItem], animated: true)
         
         self.inputView = picker
         self.inputAccessoryView = toolbar
