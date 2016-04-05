@@ -2,14 +2,27 @@ import UIKit
 
 class PickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDataSource {
     var dataList = [String]()
-
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        // Drawing code
+    // Drawing code
     }
     */
+    
+    init() {
+        super.init(frame: CGRectZero)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     func setup(dataList: [String]) {
         self.dataList = dataList
         
